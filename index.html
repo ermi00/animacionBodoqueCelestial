@@ -15,18 +15,23 @@
         device-orientation-permission-ui="enabled: false">
 
         <a-assets>
-            <video id="miVideo" src="./mi_video_transparente.webm" loop muted playsinline webkit-playsinline></video>
+            <video id="miVideo" src="./video.webm" loop muted playsinline webkit-playsinline></video>
         </a-assets>
 
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
         <a-entity id="miMarcador" mindar-image-target="targetIndex: 0">
             <a-plane 
-                position="0 0 0" 
-                rotation="0 0 0" 
+                position="0 300 0" 
+                rotation="-90 0 0" 
                 width="1" 
                 height="1" 
-                material="src: #miVideo; transparent: true; shader: flat; opacity: 1;">
+                material="
+                    src: #miVideo; 
+                    transparent: true; 
+                    shader: flat; 
+                    opacity: 1;
+                ">
             </a-plane>
         </a-entity>
     </a-scene>
@@ -37,12 +42,12 @@
             const miVideo = document.querySelector('#miVideo');
 
             miMarcador.addEventListener('targetFound', event => {
-                console.log("✅ Marcador encontrado, reproduciendo video.");
+                console.log("Marcador encontrado, reproduciendo video.");
                 miVideo.play();
             });
 
             miMarcador.addEventListener('targetLost', event => {
-                console.log("❌ Marcador perdido, pausando video.");
+                console.log("Marcador perdido, pausando video.");
                 miVideo.pause();
             });
         });
