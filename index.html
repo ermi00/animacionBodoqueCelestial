@@ -14,13 +14,13 @@
 physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
 
         <a-assets>
-            <a-asset-item id="modelo3d" src="./modelo3.glb"></a-asset-item>
+            <a-asset-item id="modelo3d" src="./modelo5animado.glb"></a-asset-item>
         </a-assets>
 
         <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
 
         <a-entity mindar-image-target="targetIndex: 0">
-            <a-gltf-model src="#modelo3d" position="0 0 0" rotation="0 60 0"></a-gltf-model>
+            <a-gltf-model src="#modelo3d" position="0 0 0" rotation="0 0 0" animation-mixer></a-gltf-model>
         </a-entity>
     </a-scene>
 </body>
